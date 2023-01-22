@@ -6,9 +6,9 @@ import json
 
 def check_sum():
     svn_version = input('Введи SVN_VERSION: ')
-    folder = input('Название текущей папки: ')
+    folder = input('Дериктория: ')
     
-    file = os.listdir('.')
+    file = os.listdir(folder)
 
     md5_list = {
         "files":[],
@@ -16,7 +16,7 @@ def check_sum():
         "git_version": "175bed51520de09c6020d19bcaecc21834fcd51b"
     }
     for files in file:
-        with open(files, 'rb') as get_file:
+        with open(folder+'/'+files, 'rb') as get_file:
             byte_size = get_file.read()
             
         get_file.close()
