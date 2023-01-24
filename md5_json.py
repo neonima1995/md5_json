@@ -4,12 +4,13 @@ import json
 
 
 def check_sum():
-    svn_version = input('SVN_VERSION: ')
+    git_version = input('Git Version: ')
+    svn_version = input('SVN Version: ')
     path = input('Folder: ')
     file_json = input('Output JSON Name: ')
     
     while True:
-        check_del = input(f'Deleted Start Path "{path}/"? -- y/n: ')
+        check_del = input(f'Deleted Start Path "{path}/"? [y/N]: ')
         
         if check_del.lower() == 'y' or check_del.lower() == 'n' or check_del.lower() == 'yes' or check_del.lower() == 'no':
             break
@@ -17,7 +18,7 @@ def check_sum():
     md5_list = {
         "files":[],
         "svn_version": svn_version,
-        "git_version": "175bed51520de09c6020d19bcaecc21834fcd51b"
+        "git_version": git_version
     }
 
     print(f'Start Make JSON: "{file_json}.json"')
